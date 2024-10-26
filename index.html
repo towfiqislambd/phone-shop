@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #000;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="w-11/12 mx-auto">
+        <nav class="flex justify-between items-center py-2  border-b-2">
+            <div class="">
+                <h2 class="text-lg font-bold">Phone Hunter</h2>
+            </div>
+            <div class="">
+                <input type="text" placeholder="Search Your Phone" class="input input-bordered" id="search-input">
+                <button class="btn btn-primary" id="search" onclick="handleSearch()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="spinner"></div>
+
+    <main class="w-11/12 mx-auto">
+        <section id="mobile-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-5"> </section>
+        <section class="text-center py-3 pb-5" id="showAll">
+            <button class="btn btn-error min-h-0 h-10" onclick="showAll()">Show All</button>
+        </section>
+        <div id="modal-container"></div>
+    </main>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
